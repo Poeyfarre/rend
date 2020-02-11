@@ -1,0 +1,36 @@
+<!-- Add a link to: 
+ 
+ local politician
+ render a vote -->
+
+<div class="container">
+    <h1 class="display-3" style="padding-top: 30px;"><%= @user.name %></h1>
+    <br />
+</div>
+
+<div class="container">
+    <h3 class="display-6">Username: <%= @user.username %></h1>
+        <br>
+        <h3 class="display-6">Email: <%= @user.email %></h1>
+            <br>
+            <h3 class="display-6">District: <%= @user.district %></h1>
+                <br>
+                <h3 class="display-6"><%= @user.party %></h1>
+                    <br>
+                    <p>Dolores quis quia ad quo voluptates. Maxime delectus totam numquam. Necessitatibus vel atque qui
+                        dolore. Id neque
+                        nemo. Dolores iusto facere est ad. Accusamus ipsa dolor ut. Et officiis ut hic. Sunt asperiores
+                        minus distinctio
+                        debitis ipsa dolor. Minima eos deleniti.</p>
+</div>
+
+<div class="container" style="padding-top: 50px;">
+    <p>My Local Rep: </p>
+    <ul>
+        <li><%= link_to @user.local_rep.name, politician_path(@user.local_rep) %></li>
+
+
+    </ul>
+    <p>Want to be heard? <%= link_to "here.", "/posts/new" %></p>
+    <p>To edit your profile click <%= link_to "here.", edit_user_path(@user) %></p>
+</div>

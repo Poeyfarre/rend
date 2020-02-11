@@ -1,0 +1,9 @@
+<h1>Fix Post</h1>
+
+<%= form_for @post do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :thought %>
+<%= f.text_area :thought %>
+<%= f.submit %>
+<% end %>

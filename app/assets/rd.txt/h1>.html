@@ -1,0 +1,25 @@
+<h1>Your Congressional Rep</h1>
+
+
+
+<div class="container">
+    <h1 class="display-3" style="padding-top: 30px;">
+        <<%= @politician.name %>< /h1>
+            <br />
+</div>
+
+<div class="container">
+    <h3 class="display-6">Party: <%= @politician.party %></h1>
+        <br>
+        <h3 class="display-6">Email: <%= @politician.office %></h1>
+            <br>
+            <h3 class="display-6">District: <%= @politician.district %></h1>
+                <br>
+
+                <p><%= @politician.bio %></p>
+</div>
+
+<div class="container" style="padding-top: 50px;">
+    <p>Want to be <%= link_to "heard?", "/posts/new" %></p>
+
+</div>

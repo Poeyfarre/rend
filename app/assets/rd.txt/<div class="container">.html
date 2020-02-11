@@ -1,0 +1,29 @@
+<div class="container">
+    <%= image_tag @politician.image, :class => "materialboxed", style: 'width:50%' %> <br>
+
+    <%= link_to "Donate", new_contribution_path, class: "waves-effect waves-light btn-large" %>
+
+    <h1><%= @politician.name %></h1>
+
+    <ul>
+        <li>Political Affiliation: <%= @politician.registered %></li>
+        <li>Title: <%= @politician.office %></li>
+        <li>Biography: <%= @politician.bio %></li>
+    </ul>
+    <h2>Causes</h2>
+
+    <ul class="collapsible">
+        <% @politician.policies.each do |policy| %>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i><%= policy.name %></div>
+            <div class="collapsible-body"><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                    reprehenderit ullam illo aperiam tempora quaerat.</span></div>
+        </li>
+        <% end %>
+    </ul>
+
+    <h2>Contributions: $<%= @politician.sum %></h2>
+
+    <%= link_to "Donate", new_donor_path, class: "waves-effect waves-light btn-large" %>
+
+</div>

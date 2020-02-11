@@ -1,0 +1,16 @@
+<div class="container">
+    <%= image_tag @politician.image, :class => "materialboxed", style: 'width:50%' %> <br>
+
+
+
+    <h1><%= @politician.name %></h1>
+
+    <ul>
+        <li>Political Affiliation: <%= @politician.party %></li>
+        <li>Title: <%= @politician.office %></li>
+        <li>District: <%= @politician.district %></li>
+        <li>Biography: <%= @politician.bio %></li>
+        <li>Rating: <%= @politician.average %></li>
+
+
+    </ul>
