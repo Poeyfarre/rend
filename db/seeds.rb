@@ -47,12 +47,13 @@ Politician.create(image: "dist_14.jpg", name: "Tom Graves", party: "Republican",
 
     dist = rand(1..14)
   
-      User.create(name: Faker::Name.name, username: Faker::Games::ElderScrolls.last_name, party: party, email: Faker::Internet.email, district: dist )
+      user = User.create(name: Faker::Name.name, username: Faker::Games::ElderScrolls.last_name, party: party, email: Faker::Internet.email, district: dist, password: "password" )
+      
   end
 
   300.times do
     rating = rand(1..10)
-    user = rand(User.all.first.id..User.all.last.id)
-    politician = rand(Politician.all.first.id..Politician.all.last.id)
+    user = rand(User.first.id..User.last.id)
+    politician = rand(Politician.first.id..Politician.last.id)
     Scale.create(user_id: user, politician_id: politician, rating:rating)
 end

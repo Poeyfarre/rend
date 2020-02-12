@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        # byebug
         @user = User.find(params[:id])
     end
 
@@ -15,8 +16,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-          redirect_to root_url, :notice:
-           "Welcome to Rendr"
+          redirect_to @user
         else
           render 'new'
         end
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
 private
     def user_params 
-        params.require(:user).permit(:name, :username, :email, :district, :party, :password, :password_confirmation)
+        params.require(:user).permit(:name, :username, :email, :district, :party, :password)
     end
 end
 

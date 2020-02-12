@@ -1,5 +1,5 @@
 # README
-
+***Needs to be cleaned up***
 RENDR
 
 Project Pitch

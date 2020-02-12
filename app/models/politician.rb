@@ -1,6 +1,6 @@
 class Politician < ApplicationRecord
     has_many :scales
-    # has_many :users, through: :scales
+    has_many :users, through: :scales
 
     def average
         divisor = self.scales.count
