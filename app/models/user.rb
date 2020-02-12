@@ -3,7 +3,7 @@ class User < ApplicationRecord
     # has_many :politicians, through: :scales 
     has_many :posts
     
-    attr_accessible :email, :password, :password_confirmation
+    attr_accessor :email, :password, :password_confirmation
   
     attr_accessor :password
     before_save :encrypt_password
@@ -28,9 +28,9 @@ class User < ApplicationRecord
         self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
       end
     end
-  end
+  
 
     def local_rep
       Politician.find_by_district(self.district)
     end
-end
+end # end of class
