@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :authenticate_user!
+    
 
     def index 
         @users = User.all
@@ -14,15 +14,14 @@ class UsersController < ApplicationController
         @user = User.new 
     end
 
-    def create 
-        @user = User.new(user_params)
-        if @user.valid?
-            @user.save
-            redirect_to @user
+    def create
+        @user = User.new(params[:user])
+        if @user.save
+          redirect_to root_url, :notice => "Signed up!"
         else
-            render :new 
+          render "new"
         end
-    end
+      end
 
     def edit 
         @user = User.find(params[:id])

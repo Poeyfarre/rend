@@ -1,16 +1,27 @@
-<h1>Create a User</h1>
+<h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :party %>
-<%= f.text_field :party %>
-<%= f.label :district %>
-<%= f.text_field :district %>
-<!-- create a dropdown for district -->
-<%= f.submit %>
+<% if @user.errors.any? %>
+<div class="error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+        <% for message in @user.errors.full_messages %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+<p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+</p>
+<p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+</p>
+<p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+</p>
+<p class="button"><%= f.submit %></p>
 <% end %>
