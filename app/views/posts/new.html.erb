@@ -1,4 +1,4 @@
-<h1>Be Heard!</h1>
+<h1>Be Heard!</h1> <br>
 
 <%= form_for @post do |f| %>
 <ul>
@@ -7,7 +7,6 @@
     <li><%= f.label :thought %></li>
     <%= f.text_area :thought %><br>
 
-    <%= f.collection_select(:user_id, User.all, :id, :name) %><br>
 </ul>
 <%= f.submit %>
 <% end %>

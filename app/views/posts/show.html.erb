@@ -1,4 +1,24 @@
-<h1>post</h1>
+<div id="post_content">
+    <h1 class="title">
+        <%= @post.title %>
+    </h1>
 
-<%= @post.title %>
-<%= @post.thought %>
+    <h2 class="body">
+        <%= @post.thought %>
+    </h2> <br>
+
+    <p>User</p>
+    <ul>
+        <li>
+            <%= link_to @post.user.username, user_path(@post.user) %>
+        </li>
+
+    </ul>
+
+    <p class="date">
+        Submitted <%= time_ago_in_words(@post.created_at) %> ago <br>
+
+        | <%= link_to "Edit", edit_post_path(@post) %> | <br>
+        <%= button_to "Delete", post_path(@post), method: :delete %>
+    </p>
+</div>

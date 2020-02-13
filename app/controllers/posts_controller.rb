@@ -15,11 +15,13 @@ class PostsController < ApplicationController
     def create 
         # byebug
         @post = Post.new(post_params)
-        if @post.valid?
-            @post.save
+        @post.user_id = session[:user_id]
+        if @post.save
+    
             redirect_to @post
         else
             render :new 
+        end
     end
 
     def edit 
@@ -27,6 +29,7 @@ class PostsController < ApplicationController
     end
 
     def update
+        
         @post = Post.find(params[:id])
         if @post.update(post_params)
             
@@ -38,11 +41,11 @@ class PostsController < ApplicationController
         
         def destroy
             @post = Post.find(params[:id])
-            @post.destroy
-
+            @post.delete
+    
             redirect_to posts_path
           end
-    end
+
 
 private
     def post_params 
