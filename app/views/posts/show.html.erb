@@ -7,13 +7,13 @@
         <%= @post.thought %>
     </h2> <br>
 
-    <p>User</p>
+    <p>User:</p>
     <ul>
         <li>
             <%= link_to @post.user.username, user_path(@post.user) %>
         </li>
 
-    </ul>
+    </ul> <br>
 
     <p class="date">
         Submitted <%= time_ago_in_words(@post.created_at) %> ago <br>

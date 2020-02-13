@@ -15,8 +15,9 @@
             <br>
             <h3 class="display-6">District: <%= @user.district %></h1>
                 <br>
-                <h3 class="display-6"><%= @user.party %></h1>
+                <h3 class="display-6">Party: <%= @user.party %></h1>
                     <br>
+                    <p>About Me:</p> <br>
                     <p>Dolores quis quia ad quo voluptates. Maxime delectus totam numquam. Necessitatibus vel atque qui
                         dolore. Id neque
                         nemo. Dolores iusto facere est ad. Accusamus ipsa dolor ut. Et officiis ut hic. Sunt asperiores
@@ -30,7 +31,8 @@
         <li><%= link_to @user.local_rep.name, politician_path(@user.local_rep) %></li>
 
 
-    </ul>
-    <p>Want to be heard? <%= link_to "here.", "/posts/new" %></p>
+    </ul> <br>
+    <p>Want to be heard? <%= link_to "here.", "/posts/new" %></p> <br>
+    <p>See what people are saying <%= link_to "here.", "/posts" %></p> <br>
     <p>To edit your profile click <%= link_to "here.", edit_user_path(@user) %></p>
 </div>
