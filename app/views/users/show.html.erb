@@ -1,8 +1,3 @@
-<!-- Add a link to: 
- 
- local politician
- render a vote -->
-
 <div class="container">
     <h1 class="display-3" style="padding-top: 30px;"><%= @user.name %></h1>
     <br />
@@ -32,7 +27,9 @@
 
 
     </ul> <br>
-    <p>Want to be heard? <%= link_to "here.", "/posts/new" %></p> <br>
+    <p>Want to be heard? Rendr your voice <%= link_to "here.", "/posts/new" %></p> <br>
     <p>See what people are saying <%= link_to "here.", "/posts" %></p> <br>
-    <p>To edit your profile click <%= link_to "here.", edit_user_path(@user) %></p>
+    <p>Edit your profile <%= link_to "here.", edit_user_path(@user) %></p> <br>
+    <p>Log Out: <%= button_to 'logout', logout_path, action: 'delete' %></p><br>
+
 </div>

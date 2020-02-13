@@ -1,7 +1,10 @@
 class User < ApplicationRecord
+  # before_action :require_login
+
   has_many :politicians, through: :scales
   has_many :scales
   has_many :posts
+  
   validates :district, numericality: { min: 0, max: 14 }
   validates :email, presence: true, uniqueness: true
 

@@ -3,14 +3,13 @@
 
 
 
-    <h1><%= @politician.name %></h1>
+    <h1><%= @politician.name %></h1> <br>
 
     <ul>
-        <li>Political Affiliation: <%= @politician.party %></li>
-        <li>Title: <%= @politician.office %></li>
-        <li>District: <%= @politician.district %></li>
-        <li>Biography: <%= @politician.bio %></li>
-        <li>Rating: <%= @politician.average %></li>
-
-
-    </ul>
+        <li>Political Affiliation: <%= @politician.party %></li> <br>
+        <li>Title: <%= @politician.office %></li> <br>
+        <li>District: <%= @politician.district %></li> <br>
+        <li>Biography: <%= @politician.bio %></li> <br>
+        <li>Rating: <%= @politician.average %></li> <br>
+        <li>Want to be heard? <%= link_to "Vote Here!", "/scales/new" %></p>
+    </ul> <br>

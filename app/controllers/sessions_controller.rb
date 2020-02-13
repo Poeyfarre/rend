@@ -12,13 +12,15 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else 
-           
-            render :new, notice => "Can't do that"
+           flash[:error] = "Enter email and password"
+            render :new
         end
     end
 
     def destroy 
         session.delete :user_id
+
+        redirect_to login_path
     end
 
     private

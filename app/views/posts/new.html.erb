@@ -1,12 +1,14 @@
 <h1>Be Heard!</h1> <br>
 
 <%= form_for @post do |f| %>
-<ul>
-    <li><%= f.label :title %></li>
-    <%= f.text_field :title %><br>
-    <li><%= f.label :thought %></li>
+<p>
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %>
+</p> <br>
+<p>
+    <%= f.label :thoughts %> <br>
     <%= f.text_area :thought %><br>
+</p> <br>
 
-</ul>
 <%= f.submit %>
 <% end %>
