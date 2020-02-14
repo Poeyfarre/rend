@@ -26,8 +26,8 @@
         <li><%= link_to @user.local_rep.name, politician_path(@user.local_rep) %></li>
 
 
-    </ul> <br>
 
+    </ul> <br>
     <% if @current_user == @user %>
     <p>Want to be heard? Rendr your voice <%= link_to "here.", "/posts/new" %></p> <br>
     <p>See what people are saying <%= link_to "here.", "/posts" %></p> <br>
@@ -37,8 +37,8 @@
     <% if @current_user == @user %>
     <p>Log Out: <%= button_to 'logout', logout_path, action: 'delete' %></p><br>
     <% else %>
-    <%= link_to “Sign Up”, signup_path %> or
-    <%= link_to “Log In”, login_path %>
+    <%= link_to 'Sign Up', new_user_path %> or
+    <%= link_to 'Log In', login_path %>
     <% end %>
 
 

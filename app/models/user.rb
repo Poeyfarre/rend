@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   def local_rep
-    Politician.find_by_district(self.district)
+   pol =  Politician.find_by_district(self.district)
+  #  byebug
   end
 end # end of class
