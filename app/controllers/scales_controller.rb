@@ -5,19 +5,21 @@ class ScalesController < ApplicationController
     end
 
     def create
-        # byebug
+       
         @scale = Scale.new(scale_params)
-        
+        @scale.user_id = session[:user_id]
+        @scale.politician_id = params[:politician_id]
         if @scale.save
-          redirect_to politician_path(@politician)
+          
+          redirect_to politician_path(@scale.politician)
         else
           render 'new'
         end
-      end
+    end
 
       private 
 
       def scale_params
-        params.require(:scale).permit(:rating)
+        params.require(:scale).permit(:rating, :politician_id)
       end
 end

@@ -5,14 +5,13 @@ class SessionsController < ApplicationController
     end
 
     def create
-        # byebug
         @user = User.find_by(email: session_params[:email])
-        # byebug
+        
         if @user && @user.authenticate(session_params[:password])
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else 
-           flash[:error] = "Enter email and password"
+           flash[:error] = "Invalid email/password combination"
             render :new
         end
     end

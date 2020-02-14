@@ -1,14 +1,17 @@
-# README
-***Needs to be cleaned up***
-RENDR
+# Rendr
 
-Project Pitch
+RENDR is a political microblog and polling service that allows users to interact with other user's posts and render daily scaled verdicts about their feelings towards their major federal and local elected officials. These votes combine to form an average which is data that can be used in versatile ways to guage the state's political temperature.
 
-1. Project Description:
+## Getting Started
 
-    RENDR is a political microblog and polling service that allows users to interact with other user's posts and render daily scaled verdicts about their feelings towards their major federal and local elected officials. These votes combine to form a "heatmap" which is data that can be used in versatile ways to guage the country's or state's political temperature.
+Clone the repo to your local machine.
+Run bundle install
+Run rails db:migrate
+Run your rails server
 
-2. Schema:
+
+### Schema
+
     The app has five models. They are:
         a. Politician [:name, :state, :office, :party]
         b. Scale (J)  [rating scale 1-10, :date/time, :politician_id, :user_id]
@@ -16,7 +19,8 @@ Project Pitch
         d. Post       [:title, :thought, :user_id]
         e. Comment    [:title, :content, :post_id]
 
-3. User Stories:
+## User Stories and CRUD Functionality
+
     -As a user I want to have a homepage that promps me to register (Read)  
     -As a user I want to be able to create an account (Create)
     -As a user I want to be able to edit profile (Update)
@@ -28,18 +32,20 @@ Project Pitch
     -As a user I want to be able to edit my post (Update)
     -As a user I want to be able to delete my post (Delete)
 
-4. Weekend Plans:
+## Built With
 
-    a. Create all models and associations
-    b. Create all controllers for all models and set RESTful route methods
-    c. Set all preliminary/custom routes
-    d. Research some APIs & Faker for data. I don't want to seed myself if possible.
-    e. Labs!!
+* [Bulma](http://www.bulma.io) - The CSS framework used
 
-5. Stretch Goals
 
-    -As a user I want to post a comment about my elected official (Create)  
-    -As a user I want to be able to look at my local heat map to see how others are feeling around me (Read)
-    -As a user I want to be able to edit my comment that I made on another user's post (Update)
-    -As a user I want to be able to delete a post that I made when I had too much to drink the night before (Delete)
-    -Add a 24hr countdown timer to the user's profile page to vote again (Read)
+## Author
+
+* **Jacy Leech** - *Initial work* - [Poeyfarre](https://github.com/Poeyfarre)
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Flatiron school instructors and students!

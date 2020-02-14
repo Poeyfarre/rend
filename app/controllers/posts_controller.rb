@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     end
 
     def create 
-        # byebug
         @post = Post.new(post_params)
         @post.user_id = session[:user_id]
         if @post.save
@@ -26,10 +25,10 @@ class PostsController < ApplicationController
 
     def edit 
         @post = Post.find(params[:id])
+        restrict_access if @post.user_id != current_user.id
     end
 
     def update
-        
         @post = Post.find(params[:id])
         if @post.update(post_params)
             
@@ -44,7 +43,7 @@ class PostsController < ApplicationController
             @post.delete
     
             redirect_to posts_path
-          end
+        end
 
 
 private

@@ -18,8 +18,10 @@
     <p class="date">
         Submitted <%= time_ago_in_words(@post.created_at) %> ago <br>
 
-        | <%= link_to "Edit", edit_post_path(@post) %> | <br>
+
+        |<%= link_to "Edit", edit_post_path(@post) %> | <br>
         <%= button_to "Delete", post_path(@post), method: :delete %>
+
     </p>
 </div>
 <p>Back to main <%= link_to "feed.", "/posts" %></p> <br>

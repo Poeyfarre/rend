@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :posts 
-  resources :users
+  resources :users, except: [:index]
   resources :politicians, only: [:show]
   resources :scales, only: [:new, :create]
 

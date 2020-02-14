@@ -11,5 +11,5 @@
         <li>District: <%= @politician.district %></li> <br>
         <li>Biography: <%= @politician.bio %></li> <br>
         <li>Rating: <%= @politician.average %></li> <br>
-        <li>Want to be heard? <%= link_to "Vote Here!", "/scales/new" %></p>
+        <li>Want to be heard? <%= link_to "Vote Here!", new_scale_path(politician_id: @politician.id) %></p>
     </ul> <br>

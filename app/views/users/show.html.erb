@@ -27,9 +27,20 @@
 
 
     </ul> <br>
+
+    <% if @current_user == @user %>
     <p>Want to be heard? Rendr your voice <%= link_to "here.", "/posts/new" %></p> <br>
     <p>See what people are saying <%= link_to "here.", "/posts" %></p> <br>
     <p>Edit your profile <%= link_to "here.", edit_user_path(@user) %></p> <br>
+    <% end %>
+
+    <% if @current_user == @user %>
     <p>Log Out: <%= button_to 'logout', logout_path, action: 'delete' %></p><br>
+    <% else %>
+    <%= link_to “Sign Up”, signup_path %> or
+    <%= link_to “Log In”, login_path %>
+    <% end %>
+
+
 
 </div>
